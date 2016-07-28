@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Knockout JS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.js"></script>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet" type="text/css">
+
+  <head>
+    <body>
+      <div class="modal fade" role="dialog" data-bind="modal:showDialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Edit details</h4>
+            </div>
+            <div class="modal-body">
+              <form action="#" data-bind="submit: add">
+                <div class="form-group">
+                  <label>Description</label>
+                  <input type="text" class="form-control" data-bind="value: description" placeholder="Enter description">
+                </div>
+                <div class="form-group">
+                  <label>IP Address</label>
+                  <input type="text" class="form-control" data-bind="value: description" placeholder="Enter IP Address">
+                </div>
+
+
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-xs" data-bind="click : submit">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div>
+        <hr>
+        <dl class="dl-horizontal">
+
+          <dt>
+            Asset Id
+          </dt>
+
+          <dd>
+            M0009
+          </dd>
+
+          <dt>
+            Client Id
+          </dt>
+
+          <dd>
+            Enfield
+          </dd>
+
+          <dt>
+            IP Address
+          </dt>
+
+          <dd>
+            194.0.158.9
+          </dd>
+
+          <dt>
+            Description
+          </dt>
+          <dd>
+            <span data-bind="text: description"></span> </dd>
+          </dl>
+          <div>
+            <a class="btn btn-default" data-bind="click: function(){showDialog(true)}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+
+          </div>
+
+        </div>
+
+
+
+
+
+        <script data-require="knockout@3.4.0" data-semver="3.4.0" src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+        <script src="dialog.vm.js"></script>
+        <script src="ko.bindings.showModal.js"></script>
+      </body>
+      </html>
