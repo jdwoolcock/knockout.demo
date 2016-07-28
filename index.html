@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Knockout JS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.js"></script>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet" type="text/css">
+
+  <head>
+    <body>
+
+      <div>
+        <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> jdw@sea.co.uk</a>
+      </div>
+
+      <svg class="a-s-fa-Ha-pa" width="24px" height="24px" viewBox="0 0 24 24" fill="#0F9D58"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+      <div class="table-responsive">
+        <table class="table">
+          <thead><tr>
+            <th>Name</th><th>Date</th><th>FromNow</th><th></th><th></th>
+          </tr></thead>
+          <tbody data-bind="foreach: items">
+            <tr>
+              <td><input data-bind="value: name" /></td>
+              <td><span data-bind="text: lastUpdate, attr: { title: 'details' }"></span></td>
+              <td><span data-bind="myWidget: {  dateTime: lastUpdate(), timer : 1000 }, attr: { title: lastUpdate() }"></span></td>
+              <td><button data-bind="click: reset">Reset</button></td>
+
+              <td>
+                <a class="btn btn-danger" data-bind="click: $root.removeItem" >
+                  <i   class="fa fa-trash-o fa-lg"></i> Delete</a>
+                </td>
+
+              </tr>
+            </tbody>
+          </table>
+
+          <button data-bind="click: addItem, enable: items().length < 5">Add</button>
+
+        </div>
+
+
+        <script data-require="knockout@3.4.0" data-semver="3.4.0" src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+        <script src="ko.bindings.relativeTime.js"></script>
+        <script src="viewmodel.js"></script>
+      </body>
+      </html>
