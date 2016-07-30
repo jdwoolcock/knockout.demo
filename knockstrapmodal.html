@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Knockout JS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.js"></script>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet" type="text/css">
+
+
+  <head>
+    <body>
+
+      <hr>
+      <dl class="dl-horizontal">
+
+        <dt>
+          Asset Id
+        </dt>
+
+        <dd>
+          M0009
+        </dd>
+
+        <dt>
+          Client Id
+        </dt>
+
+        <dd>
+          Enfield
+        </dd>
+
+        <dt>
+          IP Address
+        </dt>
+
+        <dd>
+          194.0.158.9
+        </dd>
+
+        <dt>
+          Description
+        </dt>
+        <dd>
+          <span data-bind="text: description"></span> </dd>
+        </dl>
+        <div>
+          <a class="btn btn-default" data-bind="click: show"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+
+        </div>
+
+      </div>
+
+
+<div data-bind="modal: {
+    visible: modalVisible,
+    dialogCss: 'modal-sm',
+    header: { data: { label: headerLabel } },
+    body: { name: bodyTemplate, data: bodyData },
+    footer: { data: { action: save, closeLabel: 'Cancel', primaryLabel: 'Save' } }
+}"></div>
+
+<script type="text/html" id="firstModalTemplate">
+    <div class="form-group">
+        <label data-bind="text: label"></label>
+        <input type="text" data-bind="value: value" class="form-control" />
+    </div>
+</script>
+
+<script data-require="knockout@3.4.0" data-semver="3.4.0" src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+<script src="scripts/knockstrap.min.js"></script>
+<script src="knockstrapmodal.js"></script>
+</body>
+</html>

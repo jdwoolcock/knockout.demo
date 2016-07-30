@@ -1,33 +1,12 @@
-ko.bindingHandlers.modal = {
-    init: function (element, valueAccessor) {
-        $(element).modal({
-            show: false
-        });
+var DetailsViewModel = function() {
+    this.description = ko.observable("Arse");
+    this.ipaddress = ko.observable("Feck");
+};
 
-        var value = valueAccessor();
-        if (typeof value === 'function') {
-            $(element).on('hide.bs.modal', function() {
-               value(false);
-            });
-        }
-        ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
-           $(element).modal("destroy");
-        });
-
-    },
-    update: function (element, valueAccessor) {
-        var value = valueAccessor();
-        if (ko.utils.unwrapObservable(value)) {
-            $(element).modal('show');
-        } else {
-            $(element).modal('hide');
-        }
-    }
-}
 
 function PopupViewModel() {
     var self = this;
-    this.showDialog = ko.observable(false);
+    this.showDialog = ko.observable(new DetailsViewModel());
     this.description = ko.observable("");
         this.important = ko.observable("");
 
